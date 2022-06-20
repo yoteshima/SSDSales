@@ -110,3 +110,10 @@ LOCALE_PATHS = (
     BASE_DIR / 'locale',
 )
 
+
+# ログイン用ユーザクラス
+AUTH_USER_MODEL = 'account.User'
+
+
+# media用ディレクトリ
+MEDIA_ROOT = BASE_DIR / 'media'
