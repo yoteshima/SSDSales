@@ -24,6 +24,7 @@ class UserForm(forms.Form):
                             max_length=30, widget=forms.PasswordInput())
     password_confirm = forms.CharField(label=_('password confirm'),
                             max_length=30, widget=forms.PasswordInput())
+    detail = forms.CharField(label=_('detail'), widget=forms.Textarea())
     icon = forms.ImageField(label=_('icon'))
 
 
@@ -100,6 +101,6 @@ class UserForm(forms.Form):
 
 
     def save(self):
-        upload_file = self.cleaned_data['file']
+        upload_file = self.cleaned_data['icon']
         file_name = default_storage.save(upload_file.name, upload_file)
         return default_storage.url(file_name)
